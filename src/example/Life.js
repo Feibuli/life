@@ -149,11 +149,17 @@ var Life = React.createClass({
        console.log("2");
        console.log(this.state.props1);
    },
+   handlNameChange:function(event){
+        console.log("change事件");
+        this.setState({props1:event.target.value});
+        console.log(this.state.props1);
+   },
    render() {
        console.log("render");
        return (
            <div>
-               <h1 onClick={this.click1}>{this.state.props1}</h1>
+               <h2 onClick={this.click1}>{this.state.props1}</h2>
+               <input value={this.state.props1} onChange={this.handlNameChange}/>
            </div>
        )
    }
